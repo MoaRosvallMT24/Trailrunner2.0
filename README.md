@@ -15,6 +15,10 @@ Datum 2/4
 Datum 4/4
 * Öppnar projektet igen efter att ha startat om allt (uppdateringar i windows osv) och det fungerar! Woop woop!
 
+Datum 5/4
+* Krav: Användarklassen ska kunna ställa in längd och vikt
+* Test: testNewUser med user input i terminalen
+
 
 
 ## Trailrunner
