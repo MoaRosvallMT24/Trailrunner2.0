@@ -2,7 +2,7 @@ package se.iths;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
-import se.iths.*;
+import se.iths.Run;
 
 public class RunTest {
    
