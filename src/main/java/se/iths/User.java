@@ -25,7 +25,7 @@ public class User {
         
         System.out.println("Enter your weight in kilograms: ");
         this.weight = scanner.nextDouble();
-        scanner.nextLine(); // Consume the newline character
+        scanner.nextLine(); 
         
         System.out.println("Enter your height in meters: ");
         this.height = scanner.nextDouble();
