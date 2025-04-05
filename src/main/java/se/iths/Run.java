@@ -15,5 +15,13 @@ public class Run {
 
     public String getId(){
         return id;
-    }   
+    }
+    
+    public double calculateAverageSpeed(){
+        return distance / (minutes / 60.0);
+    }
+
+    public double calculateTimePerKm(){
+        return minutes / distance;
+    }
 }

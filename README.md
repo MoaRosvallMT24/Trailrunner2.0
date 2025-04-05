@@ -18,50 +18,31 @@ Datum 4/4
 Datum 5/4
 * Krav: Användarklassen ska kunna ställa in längd och vikt
 * Test: testNewUser med user input i terminalen
-* Reflektion: Det är lite trixigt att testa user input. Efter en konversation med Copilot har jag provat mig fram till slutversionen. Det som tillslut verkat spela mest roll var att ställa in locale på min scanner. 
+* Reflektion: Det är lite trixigt att testa user input. Efter en konversation med Copilot har jag provat mig fram till slutversionen. "System.setIn(new java.io.ByteArrayInputStream(simulatedInput.getBytes()));" är en kodrad jag fick från Copilot, som gör att det går att testa konstruktorn med simulerad user input. Jag förstår efter lite efterforskning att den raden gör så att scannern hämtar sin input från en array som skapats med datan från "simulatedInput", så väntar inte scannern på input från en användare. För att scannern ska återgå till sin vanliga funktionalitet måste koden återställas efter testet, tillbaka till System.in. 
 
 * Krav: Användarklassen ska kunna räkna ut sin BMI med hjälp av längd- och viktdata.
 * Test: Returnerar calculateBMI-metoden rätt data? 
+* Reflektion: Exceptionellt straight-forward test... Har jag missat nåt? Ska det vara så simpelt?
 
+* Krav: Löprundan ska automatiskt beräkna medelhastighet samt kilometertid. 
+* Test: Testa calculate-metoder för dessa, asserta om de returnerar det de borde.
+* Reflektion: Också så simpelt. Men kul! Math is mathing. 
 
-public User() {
-    Scanner scanner = new Scanner(System.in); // Create the Scanner inside the constructor
-
-    System.out.print("Enter your username: ");
-    this.username = scanner.nextLine();
-
-    System.out.print("Enter your weight (kg): ");
-    while (!scanner.hasNextDouble()) { // Validate input for weight
-        System.out.println("Invalid input. Please enter a valid number for weight.");
-        scanner.next();
-    }
-    this.weight = scanner.nextDouble();
-
-    System.out.print("Enter your height (m): ");
-    while (!scanner.hasNextDouble()) { // Validate input for height
-        System.out.println("Invalid input. Please enter a valid number for height.");
-        scanner.next();
-    }
-    this.height = scanner.nextDouble();
-
-    System.out.println("User created successfully!");
-}
+Datum 6/4
 
 
 
-## Trailrunner
-*   Nästa steg: Skriva tester för LogRun.
-*   Logga runda
-    * Distans
-    * Tid
-    * Datum
+
+
+
+
+## Trailrunner 2Do:
+* Nästa steg: Skriva tester för RunLog.
+
 * Unikt ID-nummer (String) för varje ny runda
 
+* Refaktorering: Korrigera format för datum och ta dagens datum om inget annat anges.
 
-* Klass: Runda
-    * Klassvariabel: (String id)
-    * Klassvariabel: (double distance)
-    * Klassvariabel: (int minutes)
-    * Klassvariabel: (String date)
-* Klass för att logga rundor
-    * ArrayList
+* Ordna en Run-konstruktor som tar user input. OBS! Det unika ID-numret ska ändå tilldelas automagiskt.  
+
+
