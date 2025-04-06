@@ -1,5 +1,8 @@
 package se.iths;
 
+import java.util.Scanner;
+import java.util.Locale;
+
 public class Run {
     private String id;
     private double distance;
@@ -12,6 +15,27 @@ public class Run {
         this.minutes=minutes;
         this.date=date;
     } 
+
+    public Run(){
+        Scanner scanner = new Scanner(System.in);
+        scanner.useLocale(Locale.ENGLISH);
+        
+        System.out.println("Enter run ID in format RunX: ");
+        this.id = scanner.nextLine();
+        
+        System.out.println("Enter distance in kilometers: ");
+        this.distance = scanner.nextDouble();
+        scanner.nextLine(); 
+        
+        System.out.println("Enter time in minutes: ");
+        this.minutes = scanner.nextInt();
+        scanner.nextLine();
+        
+        System.out.println("Enter date in format YYYY-MM-DD: ");
+        this.date = scanner.nextLine();
+        
+        scanner.close();
+    }
 
     public String getId(){
         return id;
