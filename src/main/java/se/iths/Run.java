@@ -9,7 +9,9 @@ public class Run {
     private double distance;
     private int minutes;
     private LocalDate date;
-        
+
+
+    // Constructors 
     public Run(String id, double distance, int minutes, LocalDate date) {
         this.id=id;
         this.distance=distance;
@@ -39,6 +41,7 @@ public class Run {
         scanner.close();
     }
 
+    // Getters 
     public String getId(){
         return id;
     }
@@ -55,6 +58,7 @@ public class Run {
         return date;
     }
     
+    // Calculation methods
     public double calculateAverageSpeed(){
         return distance / (minutes / 60.0);
     }
