@@ -28,15 +28,15 @@ public class RunTest {
 
     @Test
     public void testNewRunWithUserInput() {
-        String simulatedInput = "Test Run\n5.0\n30\nJune15\n";
+        String simulatedInput = "Run1\n5.0\n30\n2025-04-01\n";
         System.setIn(new java.io.ByteArrayInputStream(simulatedInput.getBytes()));
 
         try {
             Run cut = new Run();
-            assertEquals("Test Run", cut.getId());
+            assertEquals("Run1", cut.getId());
             assertEquals(5.0, cut.getDistance(), 0.01);
             assertEquals(30, cut.getMinutes());
-            assertEquals("June15", cut.getDate());
+            assertEquals("2025-04-01", cut.getDate());
         } finally {
             System.setIn(System.in);
         }
