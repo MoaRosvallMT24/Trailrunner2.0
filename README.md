@@ -33,6 +33,15 @@ Datum 6/4
 * Test: Testa att rundor som läggs i RunLog-listan går att hitta. 
 * Reflektion: Jag går lätt bort mig när jag använder Collection-objekt. 
 
+* Krav: Det ska gå att beräkna total distans för alla löprundor i loggen.
+* Test: Testa att calculate-metoden för detta returnerar rätt data. 
+* Reflektion: Detta test testar by proxy att Run-klassen har en getDistance-metod, vilket min inte hade. Nu har den det. Hurra. 
+
+* Krav: Det ska gå att räkna ut medeldistansen för alla löprundor i loggen.
+* Test: Testa att calculate-metoden för detta returnerar rätt data. 
+
+
+
 
 
 

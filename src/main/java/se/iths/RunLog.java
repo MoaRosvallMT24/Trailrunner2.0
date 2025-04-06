@@ -19,5 +19,13 @@ public class RunLog {
         return log;
     }
 
+    public double calculateTotalDistanse() {
+        double totalDistance = 0.0;
+        for (Run run : log) {
+            totalDistance += run.getDistance();
+        }
+        return totalDistance;
+    }
+
 
 }
