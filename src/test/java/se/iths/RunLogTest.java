@@ -34,10 +34,53 @@ public class RunLogTest {
         cut.addRun(myRun2);
 
         // Act
-        Double totalDistance=cut.calculateTotalDistanse();
+        Double totalDistance=cut.calculateTotalDistance();
 
         // Assert
         assertEquals(15.0, totalDistance, 0.01);
     }
+
+    @Test
+    public void testCalculateAverageDistance() {
+
+        // Arrange
+        RunLog cut = new RunLog();
+        Run myRun1 = new Run("Run1", 5.0, 30, "June15");
+        Run myRun2 = new Run("Run2", 10.0, 60, "June16");
+        cut.addRun(myRun1);
+        cut.addRun(myRun2);
+
+        // Act
+        Double averageDistance=cut.calculateAverageDistance();
+
+        // Assert
+        assertEquals(7.5, averageDistance, 0.01);
+    }
+
+    @Test
+    public void testPrintRunById() {
+
+        // Arrange
+        RunLog cut = new RunLog();
+        Run myRun1 = new Run("Run1", 5.0, 30, "June15");
+        Run myRun2 = new Run("Run2", 10.0, 60, "June16");
+        cut.addRun(myRun1);
+        cut.addRun(myRun2);
+        java.io.ByteArrayOutputStream outputStream = new java.io.ByteArrayOutputStream();
+        System.setOut(new java.io.PrintStream(outputStream));
+        
+
+        // Act        
+        cut.printRunById("Run1");
+        String output = outputStream.toString().trim();
+
+        // Assert
+        String expectedOutput = "Run ID: Run1, Distance: 5.0 km, Time: 30 minutes, Date: June15";
+        assertEquals(expectedOutput, output);
+
+        // Reset
+        System.setOut(System.out);    
+    }
+
     
 }

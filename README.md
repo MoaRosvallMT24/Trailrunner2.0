@@ -39,6 +39,13 @@ Datum 6/4
 
 * Krav: Det ska gå att räkna ut medeldistansen för alla löprundor i loggen.
 * Test: Testa att calculate-metoden för detta returnerar rätt data. 
+* Reflektion: Eftersom den här metoden bygger på total distans-metoden hade en kanske kunnat skippa testet för total distans. Nu gjorde jag inte det, tycker det har en poäng. 
+
+* Krav: Det ska gå att printa ut detaljerna för en specifik löprunda genom att ange ett korrekt id.
+* Test: Gör ett test som kollar att output stämmer med de faktiska detaljerna.
+* Reflektion: Eftersom det finns en system-metod för att fabricera input borde det också finnas en för att fånga output, tänkte jag. Fick bolla lite med Copilot innan jag fick till det. 
+
+* Krav: Det ska gå att radera en löprunda baserat på 
 
 
 
@@ -51,10 +58,11 @@ Datum 6/4
 ## Trailrunner 2Do:
 * Nästa steg: Skriva tester för RunLog.
 
-* Unikt ID-nummer (String) för varje ny runda
+* Refaktorering: Unikt ID-nummer (String) för varje ny runda
 
 * Refaktorering: Korrigera format för datum och ta dagens datum om inget annat anges.
 
-* Ordna en Run-konstruktor som tar user input. OBS! Det unika ID-numret ska ändå tilldelas automagiskt.  
+* Ordna en Run-konstruktor som tar user input. OBS! Det unika ID-numret ska tilldelas automagiskt.  
 
+* Refaktorering: Byt ut hårdkodade värden mot formler som hämtar värdena. 
 
