@@ -1,0 +1,56 @@
+<?xml version="1.0" encoding="UTF-8"?><!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd"><html xmlns="http://www.w3.org/1999/xhtml" lang="sv"><head><meta http-equiv="Content-Type" content="text/html;charset=UTF-8"/><link rel="stylesheet" href="../jacoco-resources/report.css" type="text/css"/><link rel="shortcut icon" href="../jacoco-resources/report.gif" type="image/gif"/><title>RunLog.java</title><link rel="stylesheet" href="../jacoco-resources/prettify.css" type="text/css"/><script type="text/javascript" src="../jacoco-resources/prettify.js"></script></head><body onload="window['PR_TAB_WIDTH']=4;prettyPrint()"><div class="breadcrumb" id="breadcrumb"><span class="info"><a href="../jacoco-sessions.html" class="el_session">Sessions</a></span><a href="../index.html" class="el_report">tdd-projekt</a> &gt; <a href="index.source.html" class="el_package">se.iths</a> &gt; <span class="el_source">RunLog.java</span></div><h1>RunLog.java</h1><pre class="source lang-java linenums">package se.iths;
+
+import java.util.ArrayList;
+import java.util.List;
+
+public class RunLog {
+    private List&lt;Run&gt; log;
+
+    // Constructor
+<span class="fc" id="L10">    public RunLog() {</span>
+<span class="fc" id="L11">        this.log = new ArrayList&lt;&gt;();</span>
+<span class="fc" id="L12">    }</span>
+
+    // Getter
+    public List&lt;Run&gt; getLog() {
+<span class="fc" id="L16">        return log;</span>
+    }
+
+    // Add and remove methods
+    public void addRun(Run run) {
+<span class="fc" id="L21">        log.add(run);</span>
+<span class="fc" id="L22">    }</span>
+
+    public void deleteRunById(String id) {
+<span class="fc" id="L25">        log.removeIf(run -&gt; run.getId().equals(id));</span>
+<span class="fc" id="L26">    }</span>
+
+    // Calculation methods
+    public double calculateTotalDistance() {
+<span class="fc" id="L30">        double totalDistance = 0.0;</span>
+<span class="fc bfc" id="L31" title="All 2 branches covered.">        for (Run run : log) {</span>
+<span class="fc" id="L32">            totalDistance += run.getDistance();</span>
+        }
+<span class="fc" id="L34">        return totalDistance;</span>
+    }
+
+    public double calculateAverageDistance() {
+<span class="pc bpc" id="L38" title="1 of 2 branches missed.">        if (log.isEmpty()) { </span>
+<span class="nc" id="L39">            return 0.0; //prevented division by zero, which would break the program. </span>
+        }
+<span class="fc" id="L41">        return calculateTotalDistance() / log.size();</span>
+    }
+
+    // Print method
+    public void printRunById(String id) {
+<span class="pc bpc" id="L46" title="1 of 2 branches missed.">        for (Run run : log) {</span>
+<span class="pc bpc" id="L47" title="1 of 2 branches missed.">            if (run.getId().equals(id)) {</span>
+<span class="fc" id="L48">                System.out.println(&quot;Run ID: &quot; + run.getId() + &quot;, Distance: &quot; + run.getDistance() + &quot; km, Time: &quot; + run.getMinutes() + &quot; minutes, Date: &quot; + run.getDate());</span>
+<span class="fc" id="L49">                return;</span>
+            }
+        }
+<span class="nc" id="L52">    }</span>
+
+
+}
+</pre><div class="footer"><span class="right">Created with <a href="http://www.jacoco.org/jacoco">JaCoCo</a> 0.8.11.202310140853</span></div></body></html>

@@ -60,7 +60,7 @@ public class RunTest {
             assertEquals("Run1", cut.getId());
             assertEquals(5.0, cut.getDistance(), 0.01);
             assertEquals(30, cut.getMinutes());
-            assertEquals(LocalDate.parse("2025-04-01"), cut.getDate());
+            assertEquals("2025-04-01", cut.getDate());
         } finally {
             
             // Reset
