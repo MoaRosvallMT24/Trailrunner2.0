@@ -57,11 +57,14 @@ Datum 6/4
 _Tror_ att alla test är klara nu, dags för refaktorering! 
 
 
-## Trailrunner 2Do:
+Refaktorering: 
 
 * Refaktorering: Unikt ID-nummer (String) för varje ny runda _Struntar i denna, hinner inte_
 
 * Refaktorering: Korrigera format för datum och ta dagens datum om inget annat anges. 
 
 * Refaktorering: Byt ut hårdkodade värden mot formler som hämtar värdena. 
+
+
+Jacoco-rapporten visar en kodtäckning på 90% avseende instructions och 62% avseende branches. För att öka täckningen skulle jag lägga till negativa tester där det är ett alternativ, just nu är alla tester av det lyckade slaget. Jag har heller inte skrivit tester för exakt alla constructors och getters. 
 
