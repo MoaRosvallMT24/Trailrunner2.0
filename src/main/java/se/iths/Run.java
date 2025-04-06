@@ -16,6 +16,18 @@ public class Run {
     public String getId(){
         return id;
     }
+
+    public double getDistance(){
+        return distance;
+    }
+
+    public int getMinutes(){
+        return minutes;
+    }
+
+    public String getDate(){
+        return date;
+    }
     
     public double calculateAverageSpeed(){
         return distance / (minutes / 60.0);
