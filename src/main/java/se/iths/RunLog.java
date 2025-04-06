@@ -3,14 +3,20 @@ package se.iths;
 import java.util.ArrayList;
 import java.util.List;
 
-
 public class RunLog {
     private List<Run> log;
 
+    // Constructor
     public RunLog() {
         this.log = new ArrayList<>();
     }
 
+    // Getter
+    public List<Run> getLog() {
+        return log;
+    }
+
+    // Add and remove methods
     public void addRun(Run run) {
         log.add(run);
     }
@@ -19,10 +25,7 @@ public class RunLog {
         log.removeIf(run -> run.getId().equals(id));
     }
 
-    public List<Run> getLog() {
-        return log;
-    }
-
+    // Calculation methods
     public double calculateTotalDistance() {
         double totalDistance = 0.0;
         for (Run run : log) {
@@ -38,6 +41,7 @@ public class RunLog {
         return calculateTotalDistance() / log.size();
     }
 
+    // Print method
     public void printRunById(String id) {
         for (Run run : log) {
             if (run.getId().equals(id)) {
