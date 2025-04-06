@@ -25,4 +25,20 @@ public class RunTest {
         double expectedTimePerKm = 60.0/10.0; // time in minutes per km
         assertEquals(expectedTimePerKm, cut.calculateTimePerKm(), 0.01);
     }
+
+    @Test
+    public void testNewRunWithUserInput() {
+        String simulatedInput = "Test Run\n5.0\n30\nJune15\n";
+        System.setIn(new java.io.ByteArrayInputStream(simulatedInput.getBytes()));
+
+        try {
+            Run cut = new Run();
+            assertEquals("Test Run", cut.getId());
+            assertEquals(5.0, cut.getDistance(), 0.01);
+            assertEquals(30, cut.getMinutes());
+            assertEquals("June15", cut.getDate());
+        } finally {
+            System.setIn(System.in);
+        }
+    }
 }
