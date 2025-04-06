@@ -29,6 +29,9 @@ Datum 5/4
 * Reflektion: Också så simpelt. Men kul! Math is mathing. 
 
 Datum 6/4
+* Krav: Användaren ska kunna spara en (eller flera) löprunda med tillhörande attribut
+* Test: Testa att rundor som läggs i RunLog-listan går att hitta. 
+* Reflektion: Jag går lätt bort mig när jag använder Collection-objekt. 
 
 
 
