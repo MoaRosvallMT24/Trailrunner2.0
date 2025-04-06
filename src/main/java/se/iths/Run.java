@@ -54,8 +54,9 @@ public class Run {
         return minutes;
     }
 
-    public LocalDate getDate(){
-        return date;
+    public String getDate(){
+        String dateString = date.toString();
+        return dateString;
     }
     
     // Calculation methods
