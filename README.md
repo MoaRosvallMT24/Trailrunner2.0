@@ -48,24 +48,20 @@ Datum 6/4
 * Krav: Det ska gå att radera en löprunda genom att ange Id.
 * Test: Kontrollera att metoden tagit bort en löprunda, genom att titta på loggens storlek.
         Kontrollera att metoden tagit bort _rätt_ löprunda, genom att se att en löprunda med annat Id ligger på dess plats. 
+* Reflektion: Check på den.
 
+* Krav: _Användare_ ska kunna spara löprunda
+* Test: Använd user input i Run-constructorn och se om simulerad input faktiskt kommer in. 
+* Reflektion: Mycket att tänka på med user input-test, som sagts innan. Viktigt att komma ihåg extra \n efter nextInt. 
 
-
-
-
-
-
-
+_Tror_ att alla test är klara nu, dags för refaktorering! 
 
 
 ## Trailrunner 2Do:
-* Nästa steg: Skriva tester för RunLog.
 
-* Refaktorering: Unikt ID-nummer (String) för varje ny runda
+* Refaktorering: Unikt ID-nummer (String) för varje ny runda _Struntar i denna, hinner inte_
 
-* Refaktorering: Korrigera format för datum och ta dagens datum om inget annat anges.
-
-* Ordna en Run-konstruktor som tar user input. OBS! Det unika ID-numret ska tilldelas automagiskt.  
+* Refaktorering: Korrigera format för datum och ta dagens datum om inget annat anges. 
 
 * Refaktorering: Byt ut hårdkodade värden mot formler som hämtar värdena. 
 
