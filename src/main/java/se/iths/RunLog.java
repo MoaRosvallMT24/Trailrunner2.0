@@ -15,6 +15,10 @@ public class RunLog {
         log.add(run);
     }
 
+    public void deleteRunById(String id) {
+        log.removeIf(run -> run.getId().equals(id));
+    }
+
     public List<Run> getLog() {
         return log;
     }

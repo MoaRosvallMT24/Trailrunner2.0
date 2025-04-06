@@ -45,7 +45,10 @@ Datum 6/4
 * Test: Gör ett test som kollar att output stämmer med de faktiska detaljerna.
 * Reflektion: Eftersom det finns en system-metod för att fabricera input borde det också finnas en för att fånga output, tänkte jag. Fick bolla lite med Copilot innan jag fick till det. 
 
-* Krav: Det ska gå att radera en löprunda baserat på 
+* Krav: Det ska gå att radera en löprunda genom att ange Id.
+* Test: Kontrollera att metoden tagit bort en löprunda, genom att titta på loggens storlek.
+        Kontrollera att metoden tagit bort _rätt_ löprunda, genom att se att en löprunda med annat Id ligger på dess plats. 
+
 
 
 

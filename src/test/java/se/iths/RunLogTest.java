@@ -82,5 +82,23 @@ public class RunLogTest {
         System.setOut(System.out);    
     }
 
+    @Test
+    public void testDeleteRunById() {
+        // Arrange
+        RunLog cut = new RunLog();
+        Run myRun1 = new Run("Run1", 5.0, 30, "June15");
+        Run myRun2 = new Run("Run2", 10.0, 60, "June16");
+        cut.addRun(myRun1);
+        cut.addRun(myRun2);
+        List<Run> myRunLog = cut.getLog();
+
+        // Act
+        cut.deleteRunById("Run1");
+
+        // Assert        
+        assertEquals(1, myRunLog.size());
+        assertEquals(myRun2, myRunLog.get(0));
+    }
+
     
 }
