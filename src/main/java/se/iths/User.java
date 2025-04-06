@@ -8,8 +8,7 @@ public class User {
     private double weight;
     private double height;
 
-    
-    
+    // Constructors
     public User(String username, double weight, double height) {
         this.username = username;
         this.weight = weight;
@@ -34,6 +33,7 @@ public class User {
         scanner.close();
     }
     
+    // Getters
     public String getUsername() {
         return username;
     }
@@ -46,6 +46,7 @@ public class User {
         return height;
     }
 
+    // Calculation method
     public double calculateBMI() {
         return weight / (height * height);
     }
