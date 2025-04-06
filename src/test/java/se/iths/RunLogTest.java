@@ -2,6 +2,8 @@ package se.iths;
 
 import org.junit.jupiter.api.Test;
 import static org.junit.jupiter.api.Assertions.*;
+
+import java.time.LocalDate;
 import java.util.List;
 import se.iths.Run;
 import se.iths.RunLog;
@@ -13,7 +15,7 @@ public class RunLogTest {
 
         // Arrange
         RunLog cut = new RunLog();
-        Run myRun = new Run("Test Run", 3.0, 20, "June15");
+        Run myRun = new Run("Run1", 5.0, 30, LocalDate.parse("2025-04-01"));
         List<Run> myRunLog = cut.getLog();
 
         // Act
@@ -28,8 +30,8 @@ public class RunLogTest {
 
         // Arrange
         RunLog cut = new RunLog();
-        Run myRun1 = new Run("Run1", 5.0, 30, "June15");
-        Run myRun2 = new Run("Run2", 10.0, 60, "June16");
+        Run myRun1 = new Run("Run1", 5.0, 30, LocalDate.parse("2025-04-01"));
+        Run myRun2 = new Run("Run2", 10.0, 60, LocalDate.parse("2025-04-02"));
         cut.addRun(myRun1);
         cut.addRun(myRun2);
 
@@ -45,8 +47,8 @@ public class RunLogTest {
 
         // Arrange
         RunLog cut = new RunLog();
-        Run myRun1 = new Run("Run1", 5.0, 30, "June15");
-        Run myRun2 = new Run("Run2", 10.0, 60, "June16");
+        Run myRun1 = new Run("Run1", 5.0, 30, LocalDate.parse("2025-04-01"));
+        Run myRun2 = new Run("Run2", 10.0, 60, LocalDate.parse("2025-04-02"));
         cut.addRun(myRun1);
         cut.addRun(myRun2);
 
@@ -62,20 +64,21 @@ public class RunLogTest {
 
         // Arrange
         RunLog cut = new RunLog();
-        Run myRun1 = new Run("Run1", 5.0, 30, "June15");
-        Run myRun2 = new Run("Run2", 10.0, 60, "June16");
+        Run myRun1 = new Run("Run1", 5.0, 30, LocalDate.parse("2025-04-01"));
+        Run myRun2 = new Run("Run2", 10.0, 60, LocalDate.parse("2025-04-02"));
         cut.addRun(myRun1);
         cut.addRun(myRun2);
+        String expectedOutput = "Run ID: Run1, Distance: 5.0 km, Time: 30 minutes, Date: 2025-04-01";
+       
+        // Redirect output
         java.io.ByteArrayOutputStream outputStream = new java.io.ByteArrayOutputStream();
         System.setOut(new java.io.PrintStream(outputStream));
         
-
         // Act        
         cut.printRunById("Run1");
         String output = outputStream.toString().trim();
-
+       
         // Assert
-        String expectedOutput = "Run ID: Run1, Distance: 5.0 km, Time: 30 minutes, Date: June15";
         assertEquals(expectedOutput, output);
 
         // Reset
@@ -84,10 +87,11 @@ public class RunLogTest {
 
     @Test
     public void testDeleteRunById() {
+
         // Arrange
         RunLog cut = new RunLog();
-        Run myRun1 = new Run("Run1", 5.0, 30, "June15");
-        Run myRun2 = new Run("Run2", 10.0, 60, "June16");
+        Run myRun1 = new Run("Run1", 5.0, 30, LocalDate.parse("2025-04-01"));
+        Run myRun2 = new Run("Run2", 10.0, 60, LocalDate.parse("2025-04-02"));
         cut.addRun(myRun1);
         cut.addRun(myRun2);
         List<Run> myRunLog = cut.getLog();
